@@ -1,5 +1,6 @@
 {
   "name": "react-typescript",
+  "homepage": "https://larikov.online/game",
   "version": "1.0.0",
   "description": "React and TypeScript example starter project",
   "keywords": [
