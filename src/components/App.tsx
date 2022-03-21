@@ -50,7 +50,7 @@ const StyledNotifications = styled(StyledText)`
   text-align: center;
 `;
 
-const Main = () => {
+const Main: React.FC = () => {
   const { gameState, onClick, isGreen, yCoordinate } = useApp();
 
   const gameMessageDiv = (
