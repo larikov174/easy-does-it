@@ -53,7 +53,16 @@ const StyledNotifications = styled(StyledText)`
 const Main = () => {
   const { gameState, onClick, isGreen, yCoordinate } = useApp();
 
-  const gameMessageDiv = <StyledNotifications>{gameState === GameState.IN_GAME ? "Click to start game" : gameState === GameState.WIN ? "You win! (◕‿◕)" : "You loose (ಥ﹏ಥ)"}</StyledNotifications>;
+  const gameMessageDiv = (
+    <StyledNotifications>
+      {gameState === GameState.IN_GAME 
+        ? "Click to start game" 
+        : gameState === GameState.WIN 
+          ? "You win! (◕‿◕)" 
+          : "You loose (ಥ﹏ಥ)"
+      }
+    </StyledNotifications>
+  )
 
   return (
     <MainContaier>
