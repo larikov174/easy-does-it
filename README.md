@@ -1,4 +1,4 @@
-## Game: Easy-does-it
+## Game: [Easy-does-it](https://larikov.online/game/)
 Simple game based on TV show Squid game / Ojing-eo Geim / 오징어게임.
 
 All you have to do is click at the right moment of time (green line at the top is good, red one mean you should wait until green is on)
