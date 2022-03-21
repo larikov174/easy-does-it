@@ -1,4 +1,4 @@
-import { useApp, GameState } from "./AppHook";
+import { useApp, GameState } from "../hooks/AppHook";
 import Light from "./Light";
 import Player from "./Player";
 
