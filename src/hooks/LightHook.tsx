@@ -7,7 +7,7 @@ const useLight = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       flipLight();
-    }, Math.floor(Math.random() * 3500));
+    }, Math.floor(Math.random() * 2900));
 
     return () => clearTimeout(timeout);
   }, [isGreen]);

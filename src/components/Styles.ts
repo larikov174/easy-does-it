@@ -46,6 +46,7 @@ const Text = styled.p`
   font-family: -apple-system, "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 `;
 
 const Title = styled(Text)`
@@ -77,6 +78,7 @@ const Decor = styled.img.attrs((props) => ({
   width: 130px;
   height: auto;
   margin: 0 10px;
+  user-select: none;
 
   @media screen and (max-width: 640px) {
     width: 90px;
