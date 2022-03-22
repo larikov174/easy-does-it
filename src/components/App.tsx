@@ -2,6 +2,16 @@ import { useApp, GameState } from "../hooks/AppHook";
 import styled from "styled-components";
 import Light from "./Light";
 import Player from "./Player";
+import { DIALOG, MAIN } from '../utils/const';
+
+const StyledLayout = styled.div`
+  max-width: 100%;
+  max-height: 100%;
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: #077687;
+`;
 
 const MainContaier = styled.div`
   max-width: 320px;
@@ -12,7 +22,7 @@ const MainContaier = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  `;
+`;
 
 const PlayField = styled.div`
   width: 320px;
@@ -23,6 +33,7 @@ const PlayField = styled.div`
 const StyledText = styled.p`
   margin: 0;
   padding: 0;
+  color: #fff;
   font-family: -apple-system, "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -56,28 +67,30 @@ const Main: React.FC = () => {
   const gameMessageDiv = (
     <StyledNotifications>
       {gameState === GameState.IN_GAME 
-        ? "Click to start game" 
+        ? DIALOG.START 
         : gameState === GameState.WIN 
-          ? "You win! (◕‿◕)" 
-          : "You loose (ಥ﹏ಥ)"
+          ? DIALOG.WIN 
+          : DIALOG.LOSE
       }
     </StyledNotifications>
   )
 
   return (
-    <MainContaier>
-      <StyledTitle>Easy does it.</StyledTitle>
-      <PlayField onClick={onClick}>
-        <svg width="320" height="320">
-          <Light isGreen={isGreen} />
-          <Player x={160} y={300 - yCoordinate} size={20} />
-        </svg>
-        {gameMessageDiv}
-      </PlayField>
-      <StyledSubtitle>Rules:</StyledSubtitle>
-      <StyledInfo>Move when green light and stop before red light is on.</StyledInfo>
-      <StyledInfo>Get to the top of the field to win this game.</StyledInfo>
-    </MainContaier>
+    <StyledLayout>
+      <MainContaier>
+        <StyledTitle>{MAIN.TITLE}</StyledTitle>
+        <PlayField onClick={onClick}>
+          <svg width="320" height="320">
+            <Light isGreen={isGreen} />
+            <Player x={160} y={300 - yCoordinate} size={20} />
+          </svg>
+          {gameMessageDiv}
+        </PlayField>
+        <StyledSubtitle>{MAIN.SUBTITLE}</StyledSubtitle>
+        <StyledInfo>{MAIN.INFO_ONE}</StyledInfo>
+        <StyledInfo>{MAIN.INFO_TWO}</StyledInfo>
+      </MainContaier>
+    </StyledLayout>
   );
 };
 export default Main;
