@@ -30,8 +30,9 @@ export const useApp = () => {
       setGameState(GameState.IN_GAME);
     }
 
-    if (yCoordinate > 300) {
+    if (yCoordinate > 260) {
       setGameState(GameState.WIN);
+      resetYCoordinate();
     }
   };
   return { gameState, onClick, yCoordinate, isGreen };
